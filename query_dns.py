@@ -166,7 +166,8 @@ def main():
     # Step 5: query each nameserver and print its answers
     for desc, ns in servers:
         print()
-        print(f"{desc or 'Nameserver'} ({ns})")
+        #print(f"{desc or 'Nameserver'} ({ns})")
+        print(f"---------- {ns} ({desc or 'Nameserver'})")
         try:
             resolver = dns.resolver.Resolver(configure=False)  # ignore OS DNS settings
             resolver.nameservers = [resolve_ns_ip(ns)]
